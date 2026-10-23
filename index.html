@@ -3,57 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI工具超市启动包 — 从0到1实战手册</title>
+<title>HR的AI工具超市 — 82个HR真实在用的AI工具</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: #F7F7F4; color: #2C2C2A; line-height: 1.7; font-size: 14px;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+         background: #F7F7F4; color: #2C2C2A; line-height: 1.7; font-size: 14px; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 80px; }
-
-  /* ===== 顶部导航 ===== */
-  .topnav {
-    position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92);
-    backdrop-filter: blur(8px); border-bottom: 1px solid #E5E2DA;
-  }
+  .topnav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E5E2DA; }
   .topnav .inner { max-width: 1080px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
   .logo { font-weight: 600; font-size: 15px; color: #185FA5; }
   .logo span { color: #5F5E5A; font-weight: 400; font-size: 12px; margin-left: 8px; }
   .navlinks { display: flex; gap: 14px; flex-wrap: wrap; margin-left: auto; }
   .navlinks a { color: #5F5E5A; text-decoration: none; font-size: 12.5px; }
   .navlinks a:hover { color: #185FA5; }
-
-  /* ===== Hero ===== */
-  .hero { padding: 56px 0 40px; }
+  .hero { padding: 52px 0 40px; }
   .hero .kicker { display: inline-block; background: #E6F1FB; color: #185FA5; font-size: 12px; padding: 4px 12px; border-radius: 999px; margin-bottom: 16px; }
-  .hero h1 { font-size: 30px; font-weight: 600; line-height: 1.3; margin-bottom: 14px; }
-  .hero p.sub { font-size: 15px; color: #5F5E5A; max-width: 760px; }
-  .hero .stats { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
-  .stat { background: #fff; border: 1px solid #E5E2DA; border-radius: 12px; padding: 14px 20px; flex: 1; min-width: 200px; }
+  .hero h1 { font-size: 28px; font-weight: 600; line-height: 1.35; margin-bottom: 14px; }
+  .hero p.sub { font-size: 15px; color: #5F5E5A; max-width: 780px; }
+  .hero .stats { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+  .stat { background: #fff; border: 1px solid #E5E2DA; border-radius: 12px; padding: 14px 20px; flex: 1; min-width: 190px; }
   .stat b { display: block; font-size: 20px; color: #185FA5; font-weight: 600; }
   .stat span { font-size: 12.5px; color: #5F5E5A; }
-
-  /* ===== 区块 ===== */
-  section { margin-top: 56px; }
+  section { margin-top: 52px; }
   .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
   .sec-num { background: #185FA5; color: #fff; font-size: 12px; font-weight: 500; border-radius: 8px; padding: 2px 10px; }
-  .sec-head h2 { font-size: 21px; font-weight: 600; }
-  .sec-desc { color: #5F5E5A; font-size: 13.5px; max-width: 820px; margin-bottom: 22px; }
-
-  /* ===== 模式对比卡 ===== */
-  .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .mode { background: #fff; border: 1px solid #E5E2DA; border-radius: 12px; padding: 20px; }
-  .mode.pick { border: 1.5px solid #185FA5; position: relative; }
-  .mode.pick::after { content: "推荐起步"; position: absolute; top: -11px; right: 14px; background: #185FA5; color: #fff; font-size: 11px; padding: 2px 10px; border-radius: 999px; }
-  .mode h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-  .mode .tag { font-size: 12px; color: #0F6E56; margin-bottom: 10px; }
-  .mode ul { list-style: none; font-size: 12.5px; color: #5F5E5A; }
-  .mode li { padding: 5px 0 5px 16px; position: relative; border-top: 1px dashed #EEECE6; }
-  .mode li::before { content: ""; position: absolute; left: 2px; top: 12px; width: 5px; height: 5px; border-radius: 50%; background: #B4B2A9; }
-  .mode li b { color: #2C2C2A; font-weight: 500; }
-
-  /* ===== 工具墙 ===== */
+  .sec-head h2 { font-size: 20px; font-weight: 600; }
+  .sec-desc { color: #5F5E5A; font-size: 13.5px; max-width: 820px; margin-bottom: 20px; }
   .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
   .fbtn { border: 1px solid #E5E2DA; background: #fff; color: #5F5E5A; font-size: 12.5px; border-radius: 999px; padding: 5px 14px; cursor: pointer; }
   .fbtn:hover { border-color: #85B7EB; color: #185FA5; }
@@ -63,11 +38,12 @@
   .tool .tname { font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .tool .cat { font-size: 11px; color: #185FA5; background: #E6F1FB; border-radius: 6px; padding: 1px 8px; white-space: nowrap; font-weight: 400; }
   .tool .price { font-size: 12px; color: #854F0B; }
-  .tool .desc { font-size: 12.5px; color: #5F5E5A; flex: 1; }
+  .tool .desc { font-size: 12.5px; color: #444441; flex: 1; }
+  .tool .meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px dashed #EEECE6; padding-top: 8px; }
   .tool .who { font-size: 11.5px; color: #0F6E56; }
   .tool .who::before { content: "适合："; color: #888780; }
-
-  /* ===== 场景方案 ===== */
+  .tool .link { font-size: 11.5px; color: #185FA5; text-decoration: none; white-space: nowrap; }
+  .tool .link:hover { text-decoration: underline; }
   .scenes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   .scene { background: #fff; border: 1px solid #E5E2DA; border-radius: 12px; padding: 20px; }
   .scene h3 { font-size: 14.5px; font-weight: 600; margin-bottom: 10px; color: #0F6E56; }
@@ -75,150 +51,56 @@
   .scene .steps li { counter-increment: s; font-size: 12.5px; color: #444441; padding: 6px 0 6px 26px; position: relative; border-top: 1px dashed #EEECE6; }
   .scene .steps li::before { content: counter(s); position: absolute; left: 0; top: 8px; width: 17px; height: 17px; border-radius: 50%; background: #E1F5EE; color: #0F6E56; font-size: 11px; text-align: center; line-height: 17px; }
   .scene .steps li b { font-weight: 500; color: #2C2C2A; }
-
-  /* ===== 表格 ===== */
-  .tbl-box { background: #fff; border: 1px solid #E5E2DA; border-radius: 12px; overflow: hidden; }
-  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  th { background: #F1EFE8; text-align: left; font-weight: 500; padding: 10px 14px; color: #444441; white-space: nowrap; }
-  td { padding: 10px 14px; border-top: 1px solid #EEECE6; color: #444441; vertical-align: top; }
-  tr:hover td { background: #FAFAF7; }
-  td b { font-weight: 500; color: #2C2C2A; }
-
-  /* ===== 路线图 ===== */
-  .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .phase { background: #fff; border: 1px solid #E5E2DA; border-radius: 12px; padding: 16px; }
-  .phase .pt { font-size: 11.5px; color: #fff; background: #0F6E56; display: inline-block; border-radius: 6px; padding: 1px 8px; margin-bottom: 8px; }
-  .phase h4 { font-size: 13.5px; font-weight: 600; margin-bottom: 6px; }
-  .phase p { font-size: 12px; color: #5F5E5A; }
-  .phase .out { margin-top: 8px; font-size: 12px; color: #185FA5; background: #E6F1FB; border-radius: 8px; padding: 6px 10px; }
-
-  /* ===== 两栏：现在能做/需要准备 ===== */
-  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .colcard { border-radius: 12px; padding: 20px; border: 1px solid #E5E2DA; background: #fff; }
-  .colcard.now { background: #EAF3DE; border-color: #C0DD97; }
-  .colcard.later { background: #FAEEDA; border-color: #FAC775; }
-  .colcard h3 { font-size: 14.5px; font-weight: 600; margin-bottom: 10px; }
-  .colcard.now h3 { color: #3B6D11; }
-  .colcard.later h3 { color: #854F0B; }
-  .colcard ul { list-style: none; font-size: 12.5px; }
-  .colcard li { padding: 6px 0 6px 18px; position: relative; color: #444441; border-top: 1px dashed rgba(0,0,0,.07); }
-  .colcard li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 6px; height: 6px; border-radius: 50%; }
-  .colcard.now li::before { background: #639922; }
-  .colcard.later li::before { background: #EF9F27; }
-
-  /* ===== 避坑 ===== */
-  .pitfalls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .pit { background: #FCEBEB; border: 1px solid #F7C1C1; border-radius: 12px; padding: 16px; font-size: 12.5px; color: #4A1B0C; }
-  .pit b { display: block; font-weight: 600; margin-bottom: 4px; color: #A32D2D; }
-
-  .callout { background: #E6F1FB; border: 1px solid #B5D4F4; border-radius: 12px; padding: 18px 20px; font-size: 13px; color: #0C447C; margin-top: 18px; }
-  .callout b { font-weight: 600; }
-
-  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid #E5E2DA; font-size: 12px; color: #888780; }
-
-  @media (max-width: 860px) {
-    .modes, .grid, .scenes, .roadmap, .twocol, .pitfalls { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 24px; }
-  }
+  .about { background: #fff; border: 1px solid #E5E2DA; border-radius: 12px; padding: 22px; font-size: 13px; color: #444441; }
+  .about b { font-weight: 600; color: #2C2C2A; }
+  .about p { margin-bottom: 8px; }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid #E5E2DA; font-size: 12px; color: #888780; }
+  @media (max-width: 860px) { .grid, .scenes { grid-template-columns: 1fr; } .hero h1 { font-size: 22px; } }
 </style>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="inner">
-    <div class="logo">AI工具超市启动包<span>0成本 · 每周2-3小时 · 垂直切入</span></div>
+    <div class="logo">HR的AI工具超市<span>只收HR真正常用的 · 每条点评都是使用体验</span></div>
     <div class="navlinks">
-      <a href="#mode">选模式</a>
-      <a href="#demo">超市演示</a>
+      <a href="#tools">全部工具</a>
       <a href="#scene">场景方案</a>
-      <a href="#sheet">收录模板</a>
-      <a href="#road">90天路线</a>
-      <a href="#money">变现</a>
+      <a href="#about">关于本站</a>
     </div>
   </div>
 </nav>
 
 <div class="wrap">
 
-  <!-- ================= HERO ================= -->
   <div class="hero">
-    <span class="kicker">AI工具超市 = 工具导航目录站（Directory Site）</span>
-    <h1>别做「全网AI导航」，做「一个行业的AI工具超市」</h1>
-    <p class="sub">核心逻辑一句话：<b>你不生产AI，你组织AI</b>。把散落在各处的工具按场景整理、点评、分发给需要的人，赚分发环节的钱。下面这一整套页面，本身就是一个可以直接改造上线的超市MVP。</p>
+    <span class="kicker">HR 垂直 AI 工具导航</span>
+    <h1>82 个 HR 真实在用的 AI 工具<br>不谈概念，只谈好用</h1>
+    <p class="sub">每个工具都附一线HR的使用点评：适合谁、好在哪、坑在哪。按场景挑，点卡片直接进官网。不收没用的，一个场景只留最好的几个。</p>
     <div class="stats">
-      <div class="stat"><b>0 元</b><span>启动成本：免费托管 + 免费源码/模板</span></div>
-      <div class="stat"><b>30-50 个</b><span>首批收录工具数（精品 &gt; 堆量）</span></div>
-      <div class="stat"><b>每周 2-3 小时</b><span>可持续运营的时间投入</span></div>
-      <div class="stat"><b>3-6 个月</b><span>从上线到产生第一笔收入的周期</span></div>
+      <div class="stat"><b>82 个</b><span>收录工具（持续增加）</span></div>
+      <div class="stat"><b>11 个</b><span>场景分类，按活儿找工具</span></div>
+      <div class="stat"><b>100%</b><span>带使用点评，不堆链接</span></div>
+      <div class="stat"><b>每周</b><span>更新：新工具上架、失效下架</span></div>
     </div>
   </div>
 
-  <!-- ================= 1. 选模式 ================= -->
-  <section id="mode">
-    <div class="sec-head"><span class="sec-num">第 1 步</span><h2>先选模式：三种做法，门槛和天花板完全不同</h2></div>
-    <p class="sec-desc">「AI超市」有三种做法。作为个人起步，选第一种；后两种作为有了流量和案例之后的升级路径。</p>
-    <div class="modes">
-      <div class="mode pick">
-        <h3>A. 导航收录型（目录站）</h3>
-        <div class="tag">0代码 · 0垫资 · 当天可上线</div>
-        <ul>
-          <li><b>做什么：</b>把AI工具分类、写点评、做场景方案，用户点击跳转官网</li>
-          <li><b>怎么赚：</b>affiliate返佣（20-30%）、付费收录/置顶、广告</li>
-          <li><b>成本：</b>域名约50-100元/年，托管可用免费额度</li>
-          <li><b>真实参照：</b>有人用GitHub开源导航项目+Vercel免费部署，3个月做到月入约$500（广告$180+返佣$220+付费收录$100）</li>
-        </ul>
-      </div>
-      <div class="mode">
-        <h3>B. 聚合使用型</h3>
-        <div class="tag">需垫资 · 技术中等 · 抽成模式</div>
-        <ul>
-          <li><b>做什么：</b>一个账号调用多家AI（接入各家API），用户按量付费</li>
-          <li><b>怎么赚：</b>订阅费 + 按量计费差价</li>
-          <li><b>门槛：</b>需预付API费用、处理账期与稳定性，有资金风险</li>
-          <li><b>建议：</b>有了A的流量和信任后再考虑</li>
-        </ul>
-      </div>
-      <div class="mode">
-        <h3>C. 选品服务型</h3>
-        <div class="tag">需行业经验 · 高客单价</div>
-        <ul>
-          <li><b>做什么：</b>帮企业挑AI工具、做部署对接、做内部培训</li>
-          <li><b>怎么赚：</b>咨询费、部署费、年度服务框</li>
-          <li><b>适合谁：</b>懂某个行业业务的人（比如HR——这正是你的优势）</li>
-          <li><b>路径：</b>A做出行业影响力后，C是自然延伸</li>
-        </ul>
-      </div>
-    </div>
-    <div class="callout"><b>为什么建议你从「HR垂直超市」切入：</b>通用AI导航站已是红海，头部站点（如Toolify，百万级月访问）靠SEO和先发优势占住了位置，个人硬拼很难。但你本身是HR——懂招聘、绩效、员工关系的真实痛点，能把「工具」组织成「HR场景解决方案」，这是通用导航站给不了的东西。垂直即壁垒。</div>
-  </section>
-
-  <!-- ================= 2. 超市演示 ================= -->
-  <section id="demo">
-    <div class="sec-head"><span class="sec-num">第 2 步</span><h2>超市长什么样：HR垂直AI工具超市（演示版）</h2></div>
-    <p class="sec-desc">这就是一个导航收录型超市的标准结构：按场景分类 + 每个工具有价格、一句话人话点评、适合谁。整个页面可以另存为HTML、部署到免费托管，就是你的MVP。点击分类可筛选。</p>
-    <div class="filters" id="filters">
-      <button class="fbtn on" data-cat="all">全部 28</button>
-      <button class="fbtn" data-cat="recruit">招聘 6</button>
-      <button class="fbtn" data-cat="perf">绩效目标 4</button>
-      <button class="fbtn" data-cat="er">员工关系 4</button>
-      <button class="fbtn" data-cat="train">培训课件 4</button>
-      <button class="fbtn" data-cat="office">办公提效 7</button>
-      <button class="fbtn" data-cat="data">数据分析 3</button>
-    </div>
+  <section id="tools">
+    <div class="sec-head"><span class="sec-num">工具墙</span><h2>按场景挑工具</h2></div>
+    <p class="sec-desc">点分类筛选。价格标注为录入时点信息，以官网实时为准；标「搜索」的是官网待核实的工具，点进去先搜一下。</p>
+    <div class="filters" id="filters"><button class="fbtn on" data-cat="all">全部 82</button><button class="fbtn" data-cat="招聘与HR SaaS">招聘与HR SaaS 15</button><button class="fbtn" data-cat="绩效与目标">绩效与目标 6</button><button class="fbtn" data-cat="员工关系与法务">员工关系与法务 6</button><button class="fbtn" data-cat="培训与课件">培训与课件 9</button><button class="fbtn" data-cat="通用大模型">通用大模型 10</button><button class="fbtn" data-cat="会议与文档">会议与文档 8</button><button class="fbtn" data-cat="PPT与演示">PPT与演示 4</button><button class="fbtn" data-cat="设计与多媒体">设计与多媒体 8</button><button class="fbtn" data-cat="数据与调研">数据与调研 7</button><button class="fbtn" data-cat="自动化与效率">自动化与效率 6</button><button class="fbtn" data-cat="翻译工具">翻译工具 3</button></div>
     <div class="grid" id="toolGrid"></div>
-    <div class="callout">注意每个工具卡片的字段：<b>价格 + 一句话点评 + 适合谁</b>。纯链接堆砌的导航站没有价值——你的点评才是用户留下来的理由，也是SEO页面的内容本体。</div>
   </section>
 
-  <!-- ================= 3. 场景方案 ================= -->
   <section id="scene">
-    <div class="sec-head"><span class="sec-num">第 3 步</span><h2>差异化武器：场景解决方案（工具组合拳）</h2></div>
-    <p class="sec-desc">通用导航站只回答「有什么工具」，你的超市要回答「我这个事儿怎么办」。每个场景把3-5个工具串成一条工作流，这是垂直站的核心内容，也是未来接企业服务单的案例库。</p>
+    <div class="sec-head"><span class="sec-num">组合拳</span><h2>场景解决方案：一个活儿，几个工具配合着干</h2></div>
+    <p class="sec-desc">单个工具解决单点问题，几个工具串成工作流才省时间。下面三套是HR最高频的场景，照抄就能用。</p>
     <div class="scenes">
       <div class="scene">
         <h3>场景一：一周内高效招到人</h3>
         <ul class="steps">
-          <li><b>写JD和面试题：</b>ChatGPT/DeepSeek，输入岗位要点，3分钟出结构化JD+行为面试题+评分表</li>
-          <li><b>找候选人：</b>BOSS直聘AI助手，AI匹配+智能打招呼，提升回复率</li>
+          <li><b>写JD和面试题：</b>ChatGPT / DeepSeek，输入岗位要点，3分钟出结构化JD+行为面试题+评分表</li>
+          <li><b>找候选人：</b>BOSS直聘，AI匹配+智能打招呼，提升回复率</li>
           <li><b>初筛简历：</b>Kimi读批量简历导出报告，按硬性条件先过一轮</li>
           <li><b>面试记录：</b>通义听悟录音转写，自动提炼候选人要点和待办</li>
           <li><b>出评估：</b>把记录喂给Claude，按维度生成面试评估表</li>
@@ -228,8 +110,8 @@
         <h3>场景二：绩效周期不抓狂</h3>
         <ul class="steps">
           <li><b>目标对齐：</b>飞书OKR或Tita，把部门目标拆到人，进展可见</li>
-          <li><b>周报自动化：</b>钉钉AI助理/DeepSeek，把一周待办粘进去自动生成周报初稿</li>
-          <li><b>自评收集：</b>腾讯问卷AI，一句话生成绩效自评表并自动汇总</li>
+          <li><b>周报自动化：</b>钉钉AI助理，把一周待办粘进去自动生成周报初稿</li>
+          <li><b>自评收集：</b>腾讯问卷，一句话生成绩效自评表并自动汇总</li>
           <li><b>面谈准备：</b>ChatGPT，输入员工绩效数据和事例，生成面谈提纲和话术</li>
           <li><b>校准会：</b>Power BI Copilot看板，一眼看分布是否合理</li>
         </ul>
@@ -237,201 +119,42 @@
       <div class="scene">
         <h3>场景三：一个人搞定新人培训</h3>
         <ul class="steps">
-          <li><b>出大纲：</b>DeepSeek/讯飞星火，输入岗位和对象，生成课程大纲+案例+考试题</li>
+          <li><b>出大纲：</b>讯飞星火，输入岗位和对象，生成课程大纲+案例+考试题</li>
           <li><b>做课件：</b>Gamma，粘贴大纲一句话生成可讲的PPT</li>
-          <li><b>录讲解：</b>剪映AI，自动字幕+数字人讲师，不必真人出镜</li>
-          <li><b>建答疑：</b>Coze扣子搭一个「公司政策问答机器人」，挂到钉钉/飞书，新人24小时问</li>
-          <li><b>测效果：</b>腾讯问卷AI出随堂测验，自动批改出报告</li>
+          <li><b>录讲解：</b>剪映，自动字幕+数字人讲师，不必真人出镜</li>
+          <li><b>建答疑：</b>Coze扣子搭一个「公司政策问答机器人」，挂到钉钉/飞书</li>
+          <li><b>测效果：</b>腾讯问卷出随堂测验，自动批改出报告</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ================= 4. 收录模板 ================= -->
-  <section id="sheet">
-    <div class="sec-head"><span class="sec-num">第 4 步</span><h2>收录表格模板：超市的「进货台账」</h2></div>
-    <p class="sec-desc">每个上架工具就是一行记录。这套字段直接复制到Excel或飞书多维表格就能用——「返佣计划」和「替代关系」两列是变现和SEO的关键，多数新手会漏掉。</p>
-    <div class="tbl-box">
-      <table>
-        <tr><th>字段</th><th>说明</th><th>示例</th></tr>
-        <tr><td><b>工具名称</b></td><td>中英文官方名</td><td>通义听悟</td></tr>
-        <tr><td><b>官网链接</b></td><td>带返佣参数的链接（如有）</td><td>tingwu.aliyun.com/?ref=你的ID</td></tr>
-        <tr><td><b>分类</b></td><td>固定6类，别自创</td><td>办公提效</td></tr>
-        <tr><td><b>适用场景</b></td><td>具体任务，不是泛泛类别</td><td>会议录音转纪要</td></tr>
-        <tr><td><b>价格模式</b></td><td>免费额度/订阅价/企业报价</td><td>免费额度+订阅制</td></tr>
-        <tr><td><b>一句话点评</b></td><td>人话，说清优缺点，这是内容本体</td><td>中文会议转写准确率高，待办提炼好用</td></tr>
-        <tr><td><b>适合谁</b></td><td>人群/公司规模</td><td>会议多的HR</td></tr>
-        <tr><td><b>替代工具</b></td><td>用于做「XX替代品」SEO页面</td><td>飞书妙记、Otter.ai</td></tr>
-        <tr><td><b>返佣计划</b></td><td>有/无+比例+审核要求</td><td>有，30%首年</td></tr>
-        <tr><td><b>状态</b></td><td>在架/待审核/已下架</td><td>在架</td></tr>
-        <tr><td><b>收录日期</b></td><td>便于定期更新淘汰</td><td>2026-10-23</td></tr>
-      </table>
-    </div>
-  </section>
-
-  <!-- ================= 5. 90天路线 ================= -->
-  <section id="road">
-    <div class="sec-head"><span class="sec-num">第 5 步</span><h2>90天执行路线（按每周2-3小时设计）</h2></div>
-    <p class="sec-desc">总投入约35-40小时。节奏：先上架，再引流，后变现。SEO流量有滞后，前两个月数据难看是正常的。</p>
-    <div class="roadmap">
-      <div class="phase">
-        <span class="pt">第1周 · 3小时</span>
-        <h4>定位 + 列清单</h4>
-        <p>确定垂直方向（建议HR）；用上面的台账字段列出100个候选工具（从现有导航站、知乎、公众号盘点文里搜罗）</p>
-        <div class="out">产出：100个候选工具清单</div>
-      </div>
-      <div class="phase">
-        <span class="pt">第2周 · 3小时</span>
-        <h4>MVP上线</h4>
-        <p>用本页改出你的第一版（换logo、换分类、删掉演示工具），部署到GitHub Pages或Vercel，免费拿到可访问网址</p>
-        <div class="out">产出：可访问的网站（30个工具）</div>
-      </div>
-      <div class="phase">
-        <span class="pt">第3-4周 · 6小时</span>
-        <h4>补齐 + 场景内容</h4>
-        <p>工具补齐到80-100个；写3篇场景解决方案（照抄上面三个结构换成你的领域）；提交百度/Google收录</p>
-        <div class="out">产出：100工具库 + 3篇场景文</div>
-      </div>
-      <div class="phase">
-        <span class="pt">第2个月 · 12小时</span>
-        <h4>内容引流</h4>
-        <p>每周发2-3篇到小红书/知乎/公众号：「HR必备AI工具」「XX工具平替」；每篇末尾挂网站链接</p>
-        <div class="out">产出：首批站外流量（数百UV）</div>
-      </div>
-    </div>
-    <div class="roadmap" style="margin-top:12px;">
-      <div class="phase">
-        <span class="pt">第3个月 · 12小时</span>
-        <h4>启动变现</h4>
-        <p>申请各工具affiliate计划，替换官网链接；开「提交收录」入口；建一个微信群沉淀用户</p>
-        <div class="out">产出：返佣链接全量替换 + 首批社群</div>
-      </div>
-      <div class="phase">
-        <span class="pt">第4-6个月</span>
-        <h4>放大 + 试探B端</h4>
-        <p>流量稳定后尝试付费置顶收录；把场景解决方案包装成「企业AI工具选型建议」，向老同事/客户公司推荐</p>
-        <div class="out">预期：月收入几百到数千元</div>
-      </div>
-      <div class="phase">
-        <span class="pt">持续 · 每周1小时</span>
-        <h4>维护更新</h4>
-        <p>AI工具淘汰极快：每月淘汰失效工具、补新工具、更新价格。更新本身就是SEO新鲜度</p>
-        <div class="out">产出：长期复利资产</div>
-      </div>
-      <div class="phase" style="background:#EAF3DE; border-color:#C0DD97;">
-        <span class="pt" style="background:#3B6D11;">现实预期</span>
-        <h4>收入时间线</h4>
-        <p>参照已验证案例：前2个月月均300-500访问；第3个月起增长；第5个月稳定在8000-10000月访问时，月收入约$500量级（广告+返佣+付费收录各占1/3）</p>
-        <div class="out" style="background:#C0DD97; color:#173404;">慢，但是复利</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 6. 变现 ================= -->
-  <section id="money">
-    <div class="sec-head"><span class="sec-num">第 6 步</span><h2>变现清单：按启动门槛从低到高排列</h2></div>
-    <p class="sec-desc">目录站的变现不是单选，成熟状态是组合拳。顺序建议：先返佣（0门槛），再广告（要流量），后付费收录（要影响力），最后企业服务（要案例）。</p>
-    <div class="tbl-box">
-      <table>
-        <tr><th>变现方式</th><th>门槛</th><th>收益预期</th><th>建议启动时机</th></tr>
-        <tr><td><b>Affiliate返佣</b><br><span style="color:#888780;">工具旁挂推荐链接，注册/购买抽成</span></td><td>低：多数免费申请，部分需网站有内容</td><td>佣金常见20-30%首年订阅；早期主力收入</td><td>第1个月末，边收录边换链接</td></tr>
-        <tr><td><b>社群运营</b><br><span style="color:#888780;">HR交流群，后续所有变现的蓄水池</span></td><td>低：从现有同事、行业群冷启动</td><td>前期0收入，但是信任资产</td><td>第2个月起</td></tr>
-        <tr><td><b>展示广告</b><br><span style="color:#888780;">百度联盟/AdSense代码嵌入页面</span></td><td>中：需一定内容量和流量</td><td>流量起来后月几十到几百元</td><td>第2-3个月</td></tr>
-        <tr><td><b>付费收录/置顶</b><br><span style="color:#888780;">工具方付费上首页/分类置顶</span></td><td>中高：需要流量背书和行业名声</td><td>约200-2000元/位/月</td><td>第3个月后</td></tr>
-        <tr><td><b>知识付费</b><br><span style="color:#888780;">「HR的AI工具箱」手册/课</span></td><td>中：需要内容积累成体系</td><td>9.9-99元/份，看社群大小</td><td>第3-4个月</td></tr>
-        <tr><td><b>企业选型服务</b><br><span style="color:#888780;">帮公司选工具、部署、培训</span></td><td>高：需要成功案例和口碑</td><td>单次数千到数万元（天花板最高）</td><td>第6个月后</td></tr>
-      </table>
-    </div>
-    <div class="callout">提醒：<b>别太早收费</b>。先免费收录做规模和口碑，有了流量再向工具方收收录费——顺序反了会两边落空。</div>
-  </section>
-
-  <!-- ================= 7. 现在能做 vs 需要准备 ================= -->
-  <section>
-    <div class="sec-head"><span class="sec-num">第 7 步</span><h2>行动拆分：今天就能做 vs 需要提前准备</h2></div>
-    <div class="twocol">
-      <div class="colcard now">
-        <h3>今天就能动手（0成本）</h3>
-        <ul>
-          <li>定垂直方向：建议HR（用你的职业壁垒），或你更熟的其他领域</li>
-          <li>复制第4步的台账字段到Excel，开始往里面填工具</li>
-          <li>把本页另存为HTML，替换成你的工具数据，就是第一版网站</li>
-          <li>注册GitHub账号，按教程用Vercel免费部署（无需服务器、无需备案）</li>
-          <li>开2-3个平台的账号（小红书/知乎/公众号），名字统一</li>
-          <li>在现有人脉里发一条「我在整理HR用的AI工具，有推荐吗」——既是调研也是冷启动</li>
-        </ul>
-      </div>
-      <div class="colcard later">
-        <h3>需要提前准备（资源/条件）</h3>
-        <ul>
-          <li><b>域名</b>：约50-100元/年；面向国内SEO再考虑服务器+备案（额外成本和时间）</li>
-          <li><b>Affiliate账号</b>：部分海外工具需网站有基本内容才审核通过，所以先把30个工具上架</li>
-          <li><b>广告平台</b>：百度联盟/AdSense都要求网站有一定内容和流量，急不来</li>
-          <li><b>付费收录的底气</b>：先做到月几千访问，否则没人买单</li>
-          <li><b>企业服务能力</b>：需要1-2个帮你熟悉的公司免费试点的案例，建议从老同事公司切入</li>
-          <li><b>时间保护</b>：每周固定2-3小时写进日历，这个项目死在「想起来才做」</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 8. 避坑 ================= -->
-  <section>
-    <div class="sec-head"><span class="sec-num">第 8 步</span><h2>避坑清单：别人踩过的五个坑</h2></div>
-    <div class="pitfalls">
-      <div class="pit"><b>坑1：做「全网AI导航」</b>通用站是红海，头部靠SEO和先发占死了位置。做垂直，做别人不肯下功夫的场景。</div>
-      <div class="pit"><b>坑2：工具贪多</b>500个杂乱工具不如50个精品。分类混乱用户3秒就走。控制在30-50个、5-8个大类起步。</div>
-      <div class="pit"><b>坑3：前两个月没流量就放弃</b>搜索引擎收录要2-4周，SEO是复利。第3-5个月才是收获期，节奏要对。</div>
-      <div class="pit"><b>坑4：纯堆链接不写点评</b>「名称+链接+截图」没有信息量，也没有SEO价值。每工具一句人话点评是底线。</div>
-      <div class="pit"><b>坑5：一上来就收费</b>没流量时收收录费，工具方不来、用户不买。先免费做规模，再分层变现。</div>
+  <section id="about">
+    <div class="sec-head"><span class="sec-num">关于</span><h2>关于本站</h2></div>
+    <div class="about">
+      <p><b>谁在维护：</b>站长是一名HR（招聘、绩效、员工关系都干过），这个超市只收HR场景真正常用的AI工具。</p>
+      <p><b>收录标准：</b>真实用过才写点评；一个场景只留1-2个最好的，宁缺毋滥；价格和功能每季度复核，失效工具及时下架。</p>
+      <p><b>免责说明：</b>点评为站长个人使用体验，仅供参考；价格与功能以各工具官网实时信息为准（本页录入时间：2026年10月）。</p>
     </div>
   </section>
 
   <footer>
-    <p>AI工具超市启动包 · 生成于2026年10月 · 工具与价格为示例，实际上架前请以各官网最新信息为准。</p>
-    <p>页面结构即MVP：分类导航 + 工具卡片（价格/点评/适合谁）+ 场景方案 + 提交入口，可另存后直接改造部署。</p>
+    <p>HR的AI工具超市 · 2026年10月 · 共 82 个工具 · 每周更新</p>
+    <p>发现失效工具或有想推荐的？欢迎邮件反馈（联系方式见站长签名）。</p>
   </footer>
 </div>
 
 <script>
-  var TOOLS = [
-    { n: "ChatGPT / Claude", c: "recruit", cat: "招聘", p: "免费 / 约$20月", d: "写JD、面试题、面试评估表、拒信文案，一个顶半个招聘专员", w: "所有HR" },
-    { n: "BOSS直聘AI助手", c: "recruit", cat: "招聘", p: "企业版付费", d: "AI匹配候选人+智能打招呼，提升打招呼回复率", w: "招聘HR" },
-    { n: "牛客AI面试", c: "recruit", cat: "招聘", p: "按次/年费", d: "技术岗AI初面+题库，校招批量筛人省时间", w: "技术岗招聘" },
-    { n: "HireVue", c: "recruit", cat: "招聘", p: "企业报价", d: "AI视频面试与评估，外企校招常用", w: "外企/校招" },
-    { n: "Moka", c: "recruit", cat: "招聘", p: "按账号年费", d: "HR SaaS，AI简历解析+招聘流程自动化", w: "招聘团队" },
-    { n: "北森", c: "recruit", cat: "招聘", p: "企业报价", d: "测评+招聘云一体化，中大型企业用得多", w: "中大型企业" },
-    { n: "飞书OKR", c: "perf", cat: "绩效目标", p: "免费/企业版", d: "OKR对齐与进展跟踪，和文档会议打通", w: "用飞书的团队" },
-    { n: "钉钉AI助理", c: "perf", cat: "绩效目标", p: "含在钉钉", d: "写周报、做总结，一键生成面谈记录", w: "用钉钉的团队" },
-    { n: "Tita OKR", c: "perf", cat: "绩效目标", p: "按账号付费", d: "OKR+持续绩效管理，垂直做得深", w: "重OKR的团队" },
-    { n: "北森绩效云", c: "perf", cat: "绩效目标", p: "企业报价", d: "绩效考核全流程，支持复杂方案配置", w: "中大型企业" },
-    { n: "通义法睿", c: "er", cat: "员工关系", p: "免费/订阅", d: "劳动法咨询、合同审查参考，回答带依据", w: "员工关系HR" },
-    { n: "法行宝", c: "er", cat: "员工关系", p: "免费", d: "免费法律问答，劳动纠纷先问它再问律师", w: "所有HR" },
-    { n: "Coze扣子", c: "er", cat: "员工关系", p: "免费/按量", d: "零代码搭「员工政策问答机器人」，挂钉钉飞书", w: "想自动化的HR" },
-    { n: "腾讯问卷/金数据AI", c: "er", cat: "员工关系", p: "免费/付费", d: "员工满意度调研，AI一句话生成问卷", w: "员工关系HR" },
-    { n: "Gamma", c: "train", cat: "培训课件", p: "免费/约$8月", d: "一句话生成培训课件PPT，排版在线", w: "培训HR" },
-    { n: "讯飞星火", c: "train", cat: "培训课件", p: "免费", d: "写课程大纲、案例、考试题，中文场景优化好", w: "培训HR" },
-    { n: "剪映", c: "train", cat: "培训课件", p: "免费/会员", d: "AI字幕+数字人讲师，不必真人出镜录课", w: "培训HR" },
-    { n: "文心一言", c: "train", cat: "培训课件", p: "免费", d: "中文文案和制度文件起草，符合本土语境", w: "所有HR" },
-    { n: "Kimi", c: "office", cat: "办公提效", p: "免费", d: "长制度文件、长合同丢进去秒出摘要和要点", w: "所有HR" },
-    { n: "DeepSeek", c: "office", cat: "办公提效", p: "免费", d: "写方案、拆问题、给人力数据分析思路", w: "所有HR" },
-    { n: "豆包", c: "office", cat: "办公提效", p: "免费", d: "日常问答、翻译、起标题，轻量随手用", w: "所有HR" },
-    { n: "通义听悟", c: "office", cat: "办公提效", p: "免费额度/订阅", d: "会议录音转文字，自动提炼待办和要点", w: "会议多的HR" },
-    { n: "飞书妙记", c: "office", cat: "办公提效", p: "免费额度", d: "会议转写+高亮要点，和飞书文档无缝衔接", w: "用飞书的团队" },
-    { n: "WPS AI", c: "office", cat: "办公提效", p: "会员制", d: "文档表格PPT里直接用AI，国产办公顺手", w: "所有HR" },
-    { n: "Microsoft Copilot", c: "office", cat: "办公提效", p: "约$20/月", d: "Word/Excel/PPT/Outlook全家桶AI加持", w: "Office重度用户" },
-    { n: "Perplexity", c: "data", cat: "数据分析", p: "免费/约$20月", d: "查行业薪酬、劳动政策，答案带出处可追溯", w: "所有HR" },
-    { n: "ChatGPT高级数据分析", c: "data", cat: "数据分析", p: "约$20/月", d: "上传Excel自动出分析和图表，不懂函数也能用", w: "做人力数据的HR" },
-    { n: "Power BI Copilot", c: "data", cat: "数据分析", p: "企业报价", d: "人力仪表盘：离职率、编制、人效一屏看全", w: "数据型HR" }
-  ];
+  var TOOLS = [{"n": "Moka", "c": "招聘与HR SaaS", "p": "按账号年费", "d": "Moka招聘HR SaaS的AI简历解析、面试安排自动化很省事，适合50人以上团队，小团队用性价比一般。", "w": "50人以上招聘团队", "u": "https://moka.com"}, {"n": "北森招聘云", "c": "招聘与HR SaaS", "p": "企业报价", "d": "北森招聘云把招聘全流程和AI测评打通，中大型企业HR用着顺手，小团队可能嫌重。", "w": "中大型企业HR", "u": "https://beisen.com"}, {"n": "牛客", "c": "招聘与HR SaaS", "p": "按次/年费", "d": "牛客靠技术岗AI初面和题库起家，校招场景很能打，更适合校招HR和技术招聘用。", "w": "校招HR、技术招聘", "u": "https://nowcoder.com"}, {"n": "HireVue", "c": "招聘与HR SaaS", "p": "企业报价", "d": "HireVue是外企校招常用的AI视频面试工具，评估专业但更适配大规模招聘，小团队用性价比不高。", "w": "外企、大型校招", "u": "https://hirevue.com"}, {"n": "大易", "c": "招聘与HR SaaS", "p": "企业报价", "d": "大易是老牌招聘ATS，流程和报表做得细，适合中大型企业，小团队用会偏重。", "w": "中大型企业", "u": "https://www.bing.com/search?q=%E5%A4%A7%E6%98%93%20%E5%AE%98%E7%BD%91"}, {"n": "薪人薪事", "c": "招聘与HR SaaS", "p": "按账号年费", "d": "薪人薪事是100-1000人公司适用的HR SaaS，薪酬绩效考勤一体化模块齐全，小团队可能用不上这么多功能。", "w": "100-1000人公司", "u": "https://www.bing.com/search?q=%E8%96%AA%E4%BA%BA%E8%96%AA%E4%BA%8B%20%E5%AE%98%E7%BD%91"}, {"n": "2号人事部", "c": "招聘与HR SaaS", "p": "按账号付费", "d": "2号人事部适合小微公司HR，入离职线上化拖拽配置很省心，复杂组织架构可能不太适配。", "w": "小微公司HR", "u": "https://www.bing.com/search?q=2%E5%8F%B7%E4%BA%BA%E4%BA%8B%E9%83%A8%20%E5%AE%98%E7%BD%91"}, {"n": "i人事", "c": "招聘与HR SaaS", "p": "按账号付费", "d": "i人事适合连锁、制造企业HR做考勤排班，功能强，但更适配组织薪酬考勤场景。", "w": "连锁、制造企业HR", "u": "https://www.bing.com/search?q=i%E4%BA%BA%E4%BA%8B%20%E5%AE%98%E7%BD%91"}, {"n": "用友BIP人力云", "c": "招聘与HR SaaS", "p": "企业报价", "d": "用友BIP人力云适配大型集团复杂架构，招聘HR功能全，小团队用性价比偏低。", "w": "大型集团", "u": "https://yonyou.com"}, {"n": "金蝶s-HR", "c": "招聘与HR SaaS", "p": "企业报价", "d": "金蝶s-HR能和金蝶ERP财务打通，适合用金蝶的公司做人力云，非金蝶用户适配性一般。", "w": "用金蝶的公司", "u": "https://kingdee.com"}, {"n": "BOSS直聘", "c": "招聘与HR SaaS", "p": "企业付费", "d": "BOSS直聘AI直聊匹配打招呼回复率更高，适合所有招聘HR，不过AI匹配结果仍需自行筛选。", "w": "所有招聘HR", "u": "https://zhipin.com"}, {"n": "智联招聘", "c": "招聘与HR SaaS", "p": "企业付费", "d": "智联招聘老牌靠谱，中基层岗位多，适合所有招聘HR，高端岗偏少，AI招聘场景够用。", "w": "所有招聘HR", "u": "https://zhaopin.com"}, {"n": "猎聘", "c": "招聘与HR SaaS", "p": "企业付费", "d": "猎聘主打中高端招聘，猎头资源丰富，适合中高端招聘HR，普通岗位招聘性价比一般。", "w": "中高端招聘HR", "u": "https://liepin.com"}, {"n": "CDP", "c": "招聘与HR SaaS", "p": "企业报价", "d": "CDP适合外企做人力外包+系统，薪酬外包和共享服务能力强，中小企业适配度一般。", "w": "外企、跨国企业", "u": "https://www.bing.com/search?q=CDP%20%E5%AE%98%E7%BD%91"}, {"n": "盖雅工场", "c": "招聘与HR SaaS", "p": "企业报价", "d": "盖雅工场考勤排班加AI处理复杂规则很靠谱，适合连锁制造企业，小团队用可能偏重。", "w": "连锁、制造企业", "u": "https://gaiaworks.com"}, {"n": "飞书OKR", "c": "绩效与目标", "p": "免费/企业版", "d": "飞书OKR能和文档、会议打通，对齐视图清晰，适合飞书团队做目标跟踪，非飞书用户用着不顺手。", "w": "用飞书的团队", "u": "https://feishu.cn"}, {"n": "Tita", "c": "绩效与目标", "p": "按账号付费", "d": "Tita做OKR超十年，模板案例多，适合重OKR的公司，轻量需求可能用不上。", "w": "重OKR的公司", "u": "https://tita.com"}, {"n": "北森绩效云", "c": "绩效与目标", "p": "企业报价", "d": "北森绩效云适合中大型企业，复杂考核配置能力强，能覆盖绩效考核全流程，上手门槛偏高。", "w": "中大型企业", "u": "https://beisen.com"}, {"n": "日事清", "c": "绩效与目标", "p": "免费/付费", "d": "日事清轻量顺手，个人和小团队用OKR、日志、项目管理都合适，大团队复杂场景可能不够用。", "w": "小团队、个人", "u": "https://rishiqing.com"}, {"n": "Worktile", "c": "绩效与目标", "p": "免费/付费", "d": "Worktile把项目和OKR放一起看，项目型团队用着顺手，但纯目标管理场景没必要上。", "w": "项目型团队", "u": "https://worktile.com"}, {"n": "ClickUp AI", "c": "绩效与目标", "p": "免费/付费", "d": "ClickUp AI做项目管理很省心，能自动生成任务摘要和进度报告，适合项目型团队，但绩效目标管理功能一般。", "w": "项目型团队", "u": "https://clickup.com"}, {"n": "通义法睿", "c": "员工关系与法务", "p": "免费/订阅", "d": "通义法睿适合员工关系HR做劳动法咨询、合同审查，问答带法规出处日常够用，复杂场景仍需专业法务把关。", "w": "员工关系HR", "u": "https://www.bing.com/search?q=%E9%80%9A%E4%B9%89%E6%B3%95%E7%9D%BF%20%E5%AE%98%E7%BD%91"}, {"n": "法行宝", "c": "员工关系与法务", "p": "免费", "d": "法行宝是免费法律AI，HR遇纠纷可先问它，复杂问题仍建议找专业律师。", "w": "所有HR", "u": "https://ailegal.baidu.com"}, {"n": "幂律智能", "c": "员工关系与法务", "p": "企业报价", "d": "幂律智能适合法务做合同审查、法律检索，条款审得细，但员工关系场景覆盖有限。", "w": "员工关系、法务", "u": "https://powerlaw.ai"}, {"n": "北大法宝", "c": "员工关系与法务", "p": "机构订阅", "d": "北大法宝法规检索权威靠谱，写制度查依据很顺手，就是AI功能偶尔不够精准，适合员工关系和法务用。", "w": "员工关系、法务", "u": "https://pkulaw.com"}, {"n": "Coze扣子", "c": "员工关系与法务", "p": "免费/按量", "d": "不会代码也能搭员工政策问答机器人，能挂钉钉飞书，适合想自动化的HR，复杂法务问题还得人工兜底。", "w": "想自动化的HR", "u": "https://coze.cn"}, {"n": "腾讯问卷", "c": "员工关系与法务", "p": "免费/付费", "d": "腾讯问卷AI能一键生成问卷、自动汇总，适合HR做满意度调研，但复杂法务场景适配还不够细。", "w": "员工关系HR", "u": "https://wj.qq.com"}, {"n": "讯飞星火", "c": "培训与课件", "p": "免费", "d": "讯飞星火做课程大纲、案例、考题生成很稳，适合培训HR，缺点是偏教培场景，其他用途不太适配。", "w": "培训HR", "u": "https://xinghuo.xfyun.cn"}, {"n": "剪映", "c": "培训与课件", "p": "免费/会员", "d": "剪映做培训课件真省心，AI字幕、数字人、剪辑一条龙，零门槛，培训HR用着顺手，复杂精细剪辑还得靠专业软件。", "w": "培训HR", "u": "https://capcut.cn"}, {"n": "腾讯智影", "c": "培训与课件", "p": "免费额度/付费", "d": "腾讯智影数字人讲师做政策宣讲培训视频效率高，适合培训HR，复杂定制需求支持有限。", "w": "培训HR", "u": "https://zenvideo.qq.com"}, {"n": "来画", "c": "培训与课件", "p": "免费/付费", "d": "来画做培训课件挺顺手，数字人加动画适合文化价值观课，就是模板偏多，HR按需选就行。", "w": "培训HR", "u": "https://www.bing.com/search?q=%E6%9D%A5%E7%94%BB%20%E5%AE%98%E7%BD%91"}, {"n": "HeyGen", "c": "培训与课件", "p": "订阅", "d": "HeyGen做培训课件很省心，数字人多语言适配强，外企HR培训好用，就是定制自由度有限。", "w": "培训HR、外企", "u": "https://heygen.com"}, {"n": "Synthesia", "c": "培训与课件", "p": "订阅", "d": "Synthesia是AI视频生成工具，做企业培训课件模板专业好用，适合培训HR，缺点是复杂定制需求支持有限。", "w": "培训HR", "u": "https://synthesia.io"}, {"n": "D-ID", "c": "培训与课件", "p": "订阅", "d": "D-ID能把讲师照片做成会讲课的数字人，适合培训HR做课件，就是数字人神态偶尔有点生硬。", "w": "培训HR", "u": "https://d-id.com"}, {"n": "酷学院", "c": "培训与课件", "p": "企业报价", "d": "酷学院是企业培训平台，课程市场加学习路径适合体系化培训，AI课程丰富，更适合培训HR使用。", "w": "培训HR", "u": "https://www.bing.com/search?q=%E9%85%B7%E5%AD%A6%E9%99%A2%20%E5%AE%98%E7%BD%91"}, {"n": "云学堂", "c": "培训与课件", "p": "企业报价", "d": "云学堂是老牌企业e-learning平台，课程全适合培训HR，更适配中大型企业，小团队性价比一般。", "w": "培训HR", "u": "https://yxt.com"}, {"n": "ChatGPT", "c": "通用大模型", "p": "免费/约$20月", "d": "ChatGPT是通用大模型标杆，写作分析推理都好用，Custom GPT能固化SOP，适合所有HR，就是上手得花点时间。", "w": "所有HR", "u": "https://chatgpt.com"}, {"n": "Claude", "c": "通用大模型", "p": "免费/约$20月", "d": "Claude长文档、制度文件分析能力突出，适合HR做深度分析，日常轻量问答性价比一般。", "w": "所有HR", "u": "https://claude.ai"}, {"n": "Google Gemini", "c": "通用大模型", "p": "免费/订阅", "d": "Gemini和谷歌全家桶打通，查资料快，适合所有HR当搜索办公助手，复杂任务表现一般。", "w": "所有HR", "u": "https://gemini.google.com"}, {"n": "Kimi", "c": "通用大模型", "p": "免费", "d": "Kimi长文档摘要快，长合同长制度秒出要点，适合HR，复杂条款仍需人工核对。", "w": "所有HR", "u": "https://kimi.com"}, {"n": "DeepSeek", "c": "通用大模型", "p": "免费", "d": "DeepSeek中文推理强、写方案拆问题好用，适合所有HR，复杂场景表现仍待验证。", "w": "所有HR", "u": "https://deepseek.com"}, {"n": "豆包", "c": "通用大模型", "p": "免费", "d": "豆包是通用大模型，日常问答、翻译这类杂活随手问很轻快，更适合所有HR用。", "w": "所有HR", "u": "https://doubao.com"}, {"n": "文心一言", "c": "通用大模型", "p": "免费/订阅", "d": "文心一言中文写作、知识问答很顺手，文案地道，更适合HR日常用，复杂推理能力一般。", "w": "所有HR", "u": "https://yiyan.baidu.com"}, {"n": "腾讯元宝", "c": "通用大模型", "p": "免费", "d": "腾讯元宝能读公众号和腾讯文档，找资料很方便，适合所有HR，复杂推理能力一般。", "w": "所有HR", "u": "https://yuanbao.tencent.com"}, {"n": "智谱清言", "c": "通用大模型", "p": "免费", "d": "智谱清言处理学术技术文档很顺手，问答也靠谱，但更适合HR，普通用户用着可能不够灵活。", "w": "所有HR", "u": "https://chatglm.cn"}, {"n": "海螺AI", "c": "通用大模型", "p": "免费/订阅", "d": "海螺AI做视频生成很出彩，培训、招聘HR做宣传片可试，复杂问答能力一般。", "w": "培训、招聘HR", "u": "https://hailuoai.com"}, {"n": "通义听悟", "c": "会议与文档", "p": "免费额度/订阅", "d": "通义听悟转中文会议录音准、待办提炼省心，适合会议多的HR，复杂口音场景转写还需人工核对。", "w": "会议多的HR", "u": "https://tingwu.aliyun.com"}, {"n": "飞书妙记", "c": "会议与文档", "p": "免费额度", "d": "飞书妙记转写会议、高亮要点都顺手，和飞书文档日历衔接丝滑，适合飞书团队，非飞书用户用着不顺手。", "w": "用飞书的团队", "u": "https://feishu.cn"}, {"n": "讯飞听见", "c": "会议与文档", "p": "免费/按量", "d": "讯飞听见录音转写准确率高还支持方言，适合会议多的HR，复杂口音场景转写效果会打折扣。", "w": "会议多的HR", "u": "https://www.bing.com/search?q=%E8%AE%AF%E9%A3%9E%E5%90%AC%E8%A7%81%20%E5%AE%98%E7%BD%91"}, {"n": "腾讯会议AI", "c": "会议与文档", "p": "免费/付费", "d": "腾讯会议AI能自动生成会议纪要和待办，适合HR用，复杂会议纪要准确度一般，别全指望它。", "w": "所有HR", "u": "https://meeting.tencent.com"}, {"n": "Notion AI", "c": "会议与文档", "p": "免费/约$10月", "d": "Notion AI搭HR制度库、知识库很顺手，适合知识管理HR，但复杂会议文档处理还不够灵活。", "w": "知识管理HR", "u": "https://notion.com"}, {"n": "WPS AI", "c": "会议与文档", "p": "会员", "d": "WPS AI原生嵌在文档表格PPT里不用切软件，所有HR都能用，就是复杂功能还得再练练。", "w": "所有HR", "u": "https://wps.cn"}, {"n": "Microsoft Copilot", "c": "会议与文档", "p": "约$20/月", "d": "Microsoft Copilot打通Office全家桶，文档会议都能用，适合重度用户，复杂任务偶尔不够精准。", "w": "Office重度用户", "u": "https://copilot.microsoft.com"}, {"n": "钉钉AI助理", "c": "会议与文档", "p": "含在钉钉", "d": "钉钉AI助理能快速生成周报、总结和审批摘要，适合钉钉团队，但复杂长文摘要准确度一般。", "w": "用钉钉的团队", "u": "https://dingtalk.com"}, {"n": "Gamma", "c": "PPT与演示", "p": "免费/约$8月", "d": "Gamma做课件PPT很快，排版也好看，培训HR用很合适，就是细节还得自己再调调。", "w": "培训HR", "u": "https://gamma.app"}, {"n": "Beautiful.ai", "c": "PPT与演示", "p": "订阅", "d": "Beautiful.ai设计感强模板专业，适合培训HR做AI演示，缺点是自定义自由度有限。", "w": "培训HR", "u": "https://beautiful.ai"}, {"n": "Tome", "c": "PPT与演示", "p": "免费/订阅", "d": "Tome适合培训HR做AI叙事演示，讲故事很顺手，但复杂数据类PPT不太适配。", "w": "培训HR", "u": "https://tome.app"}, {"n": "iSlide", "c": "PPT与演示", "p": "免费/会员", "d": "iSlide是PPT插件和图示库，能帮HR快速美化PPT、做图示，汇报提效，不过模板多了找起来有点费时间，所有HR都能用。", "w": "所有HR", "u": "https://islide.cc"}, {"n": "Canva", "c": "设计与多媒体", "p": "免费/付费", "d": "Canva做招聘海报、活动图超省心，AI出图快，适合所有HR，模板偏通用需微调。", "w": "所有HR", "u": "https://canva.cn"}, {"n": "稿定设计", "c": "设计与多媒体", "p": "免费/会员", "d": "稿定设计中文模板多，海报PPT都能做，适合所有HR，AI功能偏基础，复杂设计还得靠专业工具。", "w": "所有HR", "u": "https://gaoding.com"}, {"n": "创客贴", "c": "设计与多媒体", "p": "免费/会员", "d": "创客贴做平面设计出小海报又快又省事，HR都能用，复杂专业设计还是得找专业工具。", "w": "所有HR", "u": "https://chuangkit.com"}, {"n": "Midjourney", "c": "设计与多媒体", "p": "订阅", "d": "Midjourney出图质感拉满，做氛围图超好用，就是上手门槛不低，适合设计、文化HR用。", "w": "设计、文化HR", "u": "https://midjourney.com"}, {"n": "即梦AI", "c": "设计与多媒体", "p": "免费/积分", "d": "即梦AI中文提示词友好，做招聘配图够用，设计、文化HR可试，复杂创意效果一般。", "w": "设计、文化HR", "u": "https://jimeng.jianying.com"}, {"n": "文心一格", "c": "设计与多媒体", "p": "免费/积分", "d": "文心一格中文场景理解准，AI绘图好用，但复杂创意还得手动调，适合设计、文化HR用。", "w": "设计、文化HR", "u": "https://yige.baidu.com"}, {"n": "Ideogram", "c": "设计与多媒体", "p": "免费/订阅", "d": "Ideogram做带文字的AI绘图很准，适合设计、文化HR用，复杂排版效果一般。", "w": "设计、文化HR", "u": "https://ideogram.ai"}, {"n": "Leonardo.AI", "c": "设计与多媒体", "p": "免费/订阅", "d": "Leonardo.AI做AI绘图很灵活，能批量出素材，设计、文化HR都能用，就是新手得花点时间摸索。", "w": "设计、文化HR", "u": "https://leonardo.ai"}, {"n": "Perplexity", "c": "数据与调研", "p": "免费/约$20月", "d": "Perplexity查薪酬政策带出处可追溯，适合所有HR，缺点是深度调研仍需人工核对。", "w": "所有HR", "u": "https://perplexity.ai"}, {"n": "秘塔AI搜索", "c": "数据与调研", "p": "免费/订阅", "d": "秘塔AI搜索中文调研无广告、来源可溯源，适合HR查资料，缺点是仅适配中文场景。", "w": "所有HR", "u": "https://metaso.cn"}, {"n": "Power BI Copilot", "c": "数据与调研", "p": "企业报价", "d": "Power BI Copilot做人力数据仪表盘很省心，数据型HR一句话就能生成离职率人效看板，不过复杂自定义图表还得手动调。", "w": "数据型HR", "u": "https://powerbi.microsoft.com"}, {"n": "办公小浣鼠", "c": "数据与调研", "p": "免费/订阅", "d": "办公小浣鼠适合数据型HR做Excel AI分析，不懂函数也能分析表格，复杂表格处理能力一般。", "w": "数据型HR", "u": "https://www.bing.com/search?q=%E5%8A%9E%E5%85%AC%E5%B0%8F%E6%B5%A3%E9%BC%A0%20%E5%AE%98%E7%BD%91"}, {"n": "ChatExcel", "c": "数据与调研", "p": "免费/订阅", "d": "北大团队做的对话式Excel工具，数据型HR用着顺手，就是复杂表格处理能力还不够强。", "w": "数据型HR", "u": "https://chatexcel.com"}, {"n": "Consensus", "c": "数据与调研", "p": "免费/订阅", "d": "Consensus适合培训、研究型HR搜学术实证，缺点是偏学术，日常业务参考少。", "w": "培训、研究型HR", "u": "https://consensus.app"}, {"n": "NotebookLM", "c": "数据与调研", "p": "免费", "d": "NotebookLM能把制度手册变成可问答知识库，HR查制度很方便，但复杂问题回答不够精准。", "w": "所有HR", "u": "https://notebooklm.google.com"}, {"n": "Zapier", "c": "自动化与效率", "p": "免费/付费", "d": "Zapier能连7000+应用，帮效率型HR把跨应用招聘流程自动化，上手要花点时间配置。", "w": "效率型HR", "u": "https://zapier.com"}, {"n": "Make", "c": "自动化与效率", "p": "免费/付费", "d": "效率型HR做可视化自动化很顺手，流程图式逻辑清晰直观，复杂场景上手门槛略高。", "w": "效率型HR", "u": "https://make.com"}, {"n": "影刀RPA", "c": "自动化与效率", "p": "免费/付费", "d": "影刀RPA是国产自动化工具，不用翻墙，效率型HR用着顺手，但复杂流程适配还得再磨合。", "w": "效率型HR", "u": "https://www.bing.com/search?q=%E5%BD%B1%E5%88%80RPA%20%E5%AE%98%E7%BD%91"}, {"n": "来也科技", "c": "自动化与效率", "p": "企业报价", "d": "来也科技RPA+AI文档处理机器人效率拉满，适合效率型HR，复杂定制场景适配性一般。", "w": "效率型HR", "u": "https://www.bing.com/search?q=%E6%9D%A5%E4%B9%9F%E7%A7%91%E6%8A%80%20%E5%AE%98%E7%BD%91"}, {"n": "Motion", "c": "自动化与效率", "p": "订阅", "d": "Motion能自动排日程定优先级，会议多的HR用着省心，但复杂自定义规则支持有限。", "w": "所有HR", "u": "https://usemotion.com"}, {"n": "Superhuman", "c": "自动化与效率", "p": "约$30/月", "d": "Superhuman是AI邮件客户端，能自动分拣邮件、快速回复，适合邮件多的HR，价格偏高。", "w": "邮件多的HR", "u": "https://superhuman.com"}, {"n": "DeepL", "c": "翻译工具", "p": "免费/订阅", "d": "DeepL翻译质量公认出色，适合HR处理外文文件，小语种支持稍弱。", "w": "所有HR", "u": "https://deepl.com"}, {"n": "火山翻译", "c": "翻译工具", "p": "免费", "d": "火山翻译AI翻译靠谱，术语、字幕翻译强，适合HR用，小语种小众文本表现一般。", "w": "所有HR", "u": "https://translate.volcengine.com"}, {"n": "有道翻译", "c": "翻译工具", "p": "免费/会员", "d": "有道翻译老牌靠谱，文档翻译很方便，AI翻译够用，适合所有HR日常使用。", "w": "所有HR", "u": "https://fanyi.youdao.com"}];
   var grid = document.getElementById("toolGrid");
   function render(cat) {
     var html = "";
     TOOLS.forEach(function (t) {
       if (cat !== "all" && t.c !== cat) return;
-      html += '<div class="tool"><div class="tname">' + t.n + '<span class="cat">' + t.cat + '</span></div>'
+      html += '<div class="tool"><div class="tname">' + t.n + '<span class="cat">' + t.c + '</span></div>'
            +  '<div class="price">' + t.p + '</div>'
            +  '<div class="desc">' + t.d + '</div>'
-           +  '<div class="who">' + t.w + '</div></div>';
+           +  '<div class="meta"><span class="who">' + t.w + '</span><a class="link" href="' + t.u + '" target="_blank" rel="noopener">访问官网</a></div></div>';
     });
     grid.innerHTML = html;
   }
